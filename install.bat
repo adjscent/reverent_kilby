@@ -1,0 +1,1 @@
+py -3 -m pip install tensorflow==2.0.0-alpha0
