@@ -33,3 +33,5 @@ user_data = pd.read_csv("data/User.csv",parse_dates=['dob'], date_parser=datepar
 
 symptom_data.drop(columns=['id'], inplace=True)
 period_data.drop(columns=['id'], inplace=True)
+
+
