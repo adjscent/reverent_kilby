@@ -1,6 +1,8 @@
 import pandas as pd 
 import numpy as np
 import os
+import datetime
+import matplotlib.pyplot as plt
 
 def dateparse(dates):
     new_dates = []
@@ -21,9 +23,13 @@ def dateparse(dates):
 
 
 period_data = pd.read_csv("data/Period.csv",parse_dates=['start_date','end_date'], date_parser=dateparse) 
-symptom_data = pd.read_csv("data/Symptom.csv",parse_dates=['date'], date_parser=dateparse) 
-user_data = pd.read_csv("data/User.csv",parse_dates=['dob'], date_parser=dateparse)
-
 period_data.dropna(inplace=True)
+
+symptom_data = pd.read_csv("data/Symptom.csv",parse_dates=['date'], date_parser=dateparse) 
 symptom_data.dropna(inplace=True)
 
+
+user_data = pd.read_csv("data/User.csv",parse_dates=['dob'], date_parser=dateparse)
+
+symptom_data.drop(columns=['id'], inplace=True)
+period_data.drop(columns=['id'], inplace=True)
