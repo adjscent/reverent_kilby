@@ -1,1 +1,1 @@
-py -3 -m pip install tensorflow==2.0.0-alpha0 pandas numpy keras matplotlib sklearn
+py -3 -m pip install pandas numpy matplotlib sklearn pprint
