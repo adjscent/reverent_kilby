@@ -7,6 +7,7 @@ import numpy as np
 import os
 import datetime
 import matplotlib.pyplot as plt
+from constants import *
 
 
 def dateparse(dates):
@@ -58,3 +59,10 @@ new_data["current_day"] = (
 new_data = new_data[new_data.current_day > 0]
 new_data = new_data[new_data.current_day < new_data.cycle_length_initial]
 new_data["stage"] = new_data["current_day"] / new_data["cycle_length_initial"]
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(new_data, new_data, test_size=0.01, random_state=22)
+new_data = X_train
+# X_test = X_test[symptoms]
+# y_test = y_test["current_day"]
