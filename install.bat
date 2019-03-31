@@ -1,1 +1,1 @@
-py -3 -m pip install pandas numpy matplotlib sklearn pprint
+py -3 -m pip install pandas numpy matplotlib sklearn pprint django django-crispy-forms
